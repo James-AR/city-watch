@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import HomePage from './HomePage'
+import UserContext from '../context/userContext'
 
 const LandingPage = () => {
+    const userContext = useContext(UserContext)
+    const { isLoggedIn } = userContext.userState
+
     return (
         <div>
             <h1>Landing Page</h1>
-            <Link to='/homepage'><button>Homepage</button></Link>
+            {!isLoggedIn ? (<Link to='/homepage'><button>Sign-In</button></Link>) : ''}
         </div>
     )
 }
