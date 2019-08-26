@@ -4,7 +4,6 @@ import SignIn from './SignIn';
 
 const HomePage = () => {
     const userContext = useContext(UserContext)
-    console.log(userContext.userState)
     
     if(!userContext.userState.isLoggedIn) {
         return (
