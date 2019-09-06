@@ -1,9 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import UserContext from '../context/userContext'
 import SignIn from './SignIn';
+import 'firebase/auth'
+import firebase from 'firebase'
 
 const HomePage = () => {
     const userContext = useContext(UserContext)
+
+    const {login} = userContext
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                login(user)
+            }
+        })
+    }, [])
     
     console.log('homepage', userContext)
 
