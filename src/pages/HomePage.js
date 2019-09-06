@@ -3,6 +3,7 @@ import UserContext from '../context/userContext'
 import SignIn from './SignIn';
 import 'firebase/auth'
 import firebase from 'firebase'
+import Navbar from '../components/Navigation/Navbar'
 
 const HomePage = () => {
     const userContext = useContext(UserContext)
@@ -25,6 +26,7 @@ const HomePage = () => {
         )
     } else return (
         <div>
+            <Navbar />
             <h1>Home</h1>
         </div>
     )

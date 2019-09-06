@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { firestore } from './firebase/firebaseUtils'
 import { Route, Switch } from 'react-router-dom'
 
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import UserState from './context/userState'
+import Forum from './pages/Forum'
+import Settings from './pages/Settings'
 
 function App() {
-  firestore.collection('users').doc('dsfsdf43ser32').delete()
 
   return (
     <div>
@@ -16,6 +16,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route path='/homepage' component={HomePage} />
+          <Route path='/forum' component={Forum} />
+          <Route path='/settings' component={Settings} />
         </Switch>
       </UserState>
     </div>
