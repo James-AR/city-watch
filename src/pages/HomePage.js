@@ -27,7 +27,8 @@ const HomePage = () => {
     } else return (
         <div>
             <Navbar />
-            <h1>Home</h1>
+            <h1>{`Hello ${userContext.userState.user.displayName}`}</h1>
+            <h2>Testing</h2>
         </div>
     )
 }
